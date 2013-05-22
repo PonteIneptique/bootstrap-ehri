@@ -4,7 +4,7 @@
 
 // Space out pagination from surrounding content
 .pagination {
-  margin: @baseLineHeight 0;
+  //margin: @baseLineHeight 0;
 }
 
 .pagination ul {
@@ -59,6 +59,7 @@
 .pagination ul > li:last-child > span {
   .border-right-radius(@baseBorderRadius);
 }
+
 
 
 // Alignment
@@ -120,4 +121,48 @@
     padding: @paddingMini;
     font-size: @fontSizeMini;
   }
+}
+
+// Pagination vertical
+// --------------------------------------------------
+.pagination-vertical ul, 
+.pagination-vertical ul > li,
+.pagination-vertical ul > li > a,
+.pagination-vertical ul > li > span {
+	display:block;
+	float:none;
+	margin:0;
+	width: (@baseLineHeight * 2);
+	padding:0;
+}
+
+.pagination-vertical ul {
+	width: (@baseLineHeight * 2);
+	margin:0;
+}
+
+.pagination-vertical ul > li > a,
+.pagination-vertical ul > li > span {
+	height: (@baseLineHeight * 2);
+	line-height:(@baseLineHeight * 2);
+	font-weight:bold;
+	padding:0;
+	text-align:center;
+}
+.pagination-vertical ul > li > a,
+.pagination-vertical ul > li > span {
+	border:1px solid @paginationBorder;
+	border-top-width:0px;
+	.border-radius(0);
+}
+.pagination-vertical ul > li:first-child > a,
+.pagination-vertical ul > li:first-child > span {
+  border-top-width: 1px;
+  .border-radius(0);
+  .border-top-radius(@baseBorderRadius);
+}
+.pagination-vertical ul > li:last-child > a,
+.pagination-vertical ul > li:last-child > span {
+  .border-radius(0);
+  .border-bottom-radius(@baseBorderRadius);
 }
