@@ -23,9 +23,9 @@
   padding-left:  20px;
   padding-right: 20px;
   //#gradient > .vertical(@navbarBackgroundHighlight, @navbarBackground);
-  //border: 1px solid @navbarBorder;
-  //.border-radius(@baseBorderRadius);
-  //.box-shadow(0 1px 4px rgba(0,0,0,.065));
+  border: 1px solid @navbarBorder;
+  .border-radius(@baseBorderRadius);
+  .box-shadow(0 1px 4px rgba(0,0,0,.065));
 
   // Prevent floats from breaking the navbar
   .clearfix();
@@ -186,6 +186,12 @@
   min-height:	@navbarTopHeight;
 	background-color:@navbarTopBackground;
 	color:@navbarTopColor;
+  border: none;
+  .border-radius(@baseBorderRadius);
+  //.box-shadow(0 1px 4px rgba(0,0,0,.065));
+}
+form.search-bar .navbar .navbar-inner {
+	background-color:@SearchBarFilterBackgroundColor;
 }
 .navbar-fixed-bottom .navbar-inner {
   border-width: 1px 0 0;
@@ -258,6 +264,14 @@
   text-decoration: none;
   
 }
+.navbar-fixed-top .nav > li > a {
+  float: none;
+  // Vertically center the text given @navbarHeight
+  padding: ((@navbarHeight - @baseLineHeight) / 2) 15px ((@navbarHeight - @baseLineHeight) / 2);
+  color: @navbarTopLinkColor;
+  text-decoration: none;
+  
+}
 .navbar .nav .dropdown-toggle .caret {
   margin-top: 8px;
 }
@@ -270,6 +284,14 @@
   text-decoration: none;
 }
 
+//Hover/focus top bar
+.navbar-fixed-top .nav > li > a:focus,
+.navbar-fixed-top .nav > li > a:hover {
+  background-color: @navbarTopLinkBackgroundHover; // "transparent" is default to differentiate :hover/:focus from .active
+  color: @navbarTopLinkColorHover;
+  text-decoration: none;
+}
+
 // Active nav items
 .navbar .nav > .active > a,
 .navbar .nav > .active > a:hover,
@@ -279,7 +301,15 @@
   background-color: @navbarLinkBackgroundActive;
   .box-shadow(inset 0 3px 8px rgba(0,0,0,.125));
 }
-
+//Active nav items top bar
+.navbar-fixed-top .nav > .active > a,
+.navbar-fixed-top .nav > .active > a:hover,
+.navbar-fixed-top .nav > .active > a:focus {
+  color: @navbarTopLinkColorActive;
+  text-decoration: none;
+  background-color: @navbarTopLinkBackgroundActive;
+  .box-shadow(inset 0 3px 8px rgba(0,0,0,.125));
+}
 // Navbar button for toggling navbar items in responsive layouts
 // These definitions need to come after '.navbar .btn'
 .navbar .btn-navbar {
@@ -363,6 +393,21 @@
   background-color: @navbarLinkBackgroundActive;
   color: @navbarLinkColorActive;
 }
+
+.navbar-fixed-top .nav li.dropdown.open > .dropdown-toggle,
+.navbar-fixed-top .nav li.dropdown.active > .dropdown-toggle,
+.navbar-fixed-top .nav li.dropdown.open.active > .dropdown-toggle {
+  background-color: @navbarTopLinkBackgroundActive;
+  color: @navbarTopLinkColorActive;
+}
+
+.search-bar .nav li.dropdown.open > .dropdown-toggle,
+.search-bar .nav li.dropdown.active > .dropdown-toggle,
+.search-bar .nav li.dropdown.open.active > .dropdown-toggle {
+  background-color: darken(@SearchBarFilterBackgroundColor, 5%);
+  color: @navbarLinkColorActive;
+}
+
 .navbar .nav li.dropdown > .dropdown-toggle .caret {
   border-top-color: @navbarLinkColor;
   border-bottom-color: @navbarLinkColor;
@@ -374,6 +419,9 @@
   border-bottom-color: @navbarLinkColorActive;
 }
 
+.navbar .nav li.dropdown {
+	cursor:pointer;
+}
 // Right aligned menus need alt position
 .navbar .pull-right > li > .dropdown-menu,
 .navbar .nav > li > .dropdown-menu.pull-right {

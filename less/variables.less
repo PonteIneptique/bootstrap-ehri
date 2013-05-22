@@ -180,9 +180,22 @@
 @navbarCollapseWidth:             979px;
 @navbarCollapseDesktopWidth:      @navbarCollapseWidth + 1;
 
+//Top aka. Menu
 @navbarTopHeight:				  95px;
-@navbarTopBackground: 			#36114F;
+@navbarTopBackground: 			#59008C;
 @navbarTopColor:				#ffffff;
+@navbarTopBackgroundHighlight:       #ffffff;
+
+@navbarTopText:                      #fff;
+@navbarTopLinkColor:                 #fff;
+@navbarTopLinkColorHover:            #fff;
+@navbarTopLinkColorActive:           #fff;
+@navbarTopLinkBackgroundHover:       #781096;
+@navbarTopLinkBackgroundActive:      darken(@navbarTopBackground, 5%);
+
+
+//****//
+
 @navbarHeight:                    40px;
 @navbarBackgroundHighlight:       #ffffff;
 @navbarBackground:                darken(@navbarBackgroundHighlight, 5%);
@@ -302,3 +315,9 @@
 // 768px-979px
 @fluidGridColumnWidth768:      percentage(@gridColumnWidth768/@gridRowWidth768);
 @fluidGridGutterWidth768:      percentage(@gridGutterWidth768/@gridRowWidth768);
+
+
+//Search Bar
+@SearchBarHeight: 			30px;
+@SearchBarBackgroundColor:	#6B854B;
+@SearchBarFilterBackgroundColor:#DEE6D5;
