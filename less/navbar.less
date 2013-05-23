@@ -61,7 +61,21 @@
     text-decoration: none;
   }
 }
-
+.navbar-fixed-top .brand {
+  float: left;
+  display: block;
+  // Vertically center the text given @navbarHeight
+  padding: ((@navbarTopHeight - @baseLineHeight) / 2) 20px ((@navbarTopHeight - @baseLineHeight) / 2);
+  margin-left: -20px; // negative indent to left-align the text down the page
+  font-size: 20px;
+  font-weight: 200;
+  color: @navbarBrandColor;
+  
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
 // Plain text in topbar
 // -------------------------
 .navbar-text {
@@ -253,7 +267,8 @@ form.search-bar .navbar .navbar-inner {
 
 // Links
 .navbar-fixed-top .nav > li > a {
-  padding: ((@navbarTopHeight - @baseLineHeight) / 2) 15px ((@navbarTopHeight - @baseLineHeight) / 2) !important;
+	text-align:center;
+  padding: ((@navbarTopHeight - (@baseLineHeight * 2)) / 2) 15px ((@navbarTopHeight - (@baseLineHeight * 2)) / 2) !important;
 	
 }
 .navbar .nav > li > a {
@@ -262,7 +277,7 @@ form.search-bar .navbar .navbar-inner {
   padding: ((@navbarHeight - @baseLineHeight) / 2) 15px ((@navbarHeight - @baseLineHeight) / 2);
   color: @navbarLinkColor;
   text-decoration: none;
-  
+  font-weight:bold;
 }
 .navbar-fixed-top .nav > li > a {
   float: none;

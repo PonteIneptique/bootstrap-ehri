@@ -1,0 +1,45 @@
+.navbar-fixed-top table.groupicon {
+	width: (@navbarTopHeight - 10);
+	margin:0 5px;
+	height:	@navbarTopHeight;
+	border:0;
+	padding:0;
+	> tbody > tr { 
+		padding:0;
+		margin:0;
+		> td {
+			padding:0;
+			margin:0;
+			text-align:center;
+			> a {
+				color:@navbarTopLinkColor!important;
+				&:hover,
+				&:active {
+					text-decoration:none;
+				}
+			}
+		}
+		&.icon > td {
+			width: 33%;
+		}
+		&.text > td {
+			width:100%;
+		}
+		
+		&.text-x2 {
+			height: ( @navbarTopHeight / 3 ) * 2;
+			> td {
+				width:100%;
+				vertical-align:middle;
+			}
+		}
+	}
+}
+
+.navbar-fixed-top .groupicon a [class="icon-"] {
+	color:#fff!important;
+}
+
+	//@navbarTopLinkColor:                 #fff;
+	//@navbarTopLinkColorHover:            #fff;
+	//@navbarTopLinkColorActive:   

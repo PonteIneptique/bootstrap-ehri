@@ -1,0 +1,29 @@
+.alternative {
+	margin-right:10px!important;
+	.alternative-hover {
+		padding:0;
+		margin:0;
+		width:	@navbarTopHeight;
+		height: @navbarTopHeight;
+		
+		.alternative-content {
+			display:none;
+		}
+		.alternative-title {
+			padding:0;
+			margin:0;
+			display:block;
+		}
+		
+		&:hover {
+			.alternative-content {
+				display:block;
+			}
+			.alternative-title {
+				display:none;
+			}
+		}
+	}
+}
+
+//.navbar-fixed-top .alternative a [class="icon-"],
