@@ -1,0 +1,51 @@
+.dropup-container {
+	position:relative;
+	> .dropup-toggle {
+	}
+	> .dropup {
+		display:none;
+	}
+	&.open > .dropup {
+		display:block;
+		position: fixed;
+		//top: -1 * ( @dropupHeight + @dropupMargin + @dropupBorder + @dropupPadding * 2 + 5);
+		bottom: @navbarHeight + 3;
+		height:400px;
+		width: ( 4 * @gridColumnWidth) + (5 * @gridGutterWidth );
+		padding:@dropupPadding;
+		border:@dropupBorder solid @dropdownBorder;
+		margin:@dropupMargin 0;
+		background-color:@dropupBackgroundColor;
+		.border-radius(6px);
+		&.left {
+			left:2px;
+		}
+		&.right {
+			right:2px;
+		}
+	}
+	&.open:before {
+		content:"";
+		display:block; /* reduce the damage in FF3.0 */
+		position:absolute;
+		top:-5px;
+		left:50px;
+		width:0;
+		border-width:5px 7px 0;
+		border-style:solid;
+		border-color:@dropdownBorder transparent;
+		background-color:transparent;
+	}
+	&.open:after {
+		content:"";
+		display:block; /* reduce the damage in FF3.0 */
+		position:absolute;
+		top:-5px;
+		left:51px;
+		width:0;
+		border-width:4px 6px 0;
+		border-style:solid;
+		border-color:@dropupBackgroundColor transparent;
+		background-color:transparent;
+	}
+}
