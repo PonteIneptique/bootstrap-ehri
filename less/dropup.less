@@ -16,6 +16,8 @@
 		margin:@dropupMargin 0;
 		background-color:@dropupBackgroundColor;
 		.border-radius(6px);
+		.box-shadow(#888 0px -1px 10px 0px);
+		.transition(1s height);
 		&.left {
 			left:2px;
 		}
@@ -28,9 +30,9 @@
 			position:relative;
 			> .dropup-80prct {
 				overflow-y:auto;
-				height: 0.75 * @dropupHeight;
+				height: 0.85 * @dropupHeight;
 				display:block;
-				padding:@dropupPadding;
+				.box-sizing("border");
 			}
 			> .dropup-bottom {
 				width:100%;
