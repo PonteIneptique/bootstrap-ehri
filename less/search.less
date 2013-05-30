@@ -21,4 +21,50 @@
 		width:90%;
 		overflow:hidden;
 	}
+	header .toolbar-inline {
+		margin-left:10px;
+		> .iconwithtooltip {
+			position:relative;
+			color:@black;
+			text-decoration:none;
+			&:hover {
+				cursor:pointer;
+				&:before {
+					position: absolute;
+					z-index: @zindexTooltip;
+					display: block;
+					
+					top:-22px;
+					left:-75px;					
+					
+					width: 150px;
+					height:20px; 
+					
+					color: @tooltipColor;
+					text-align: center;
+					text-decoration: none;
+					font-size: 11px;
+					line-height: 20px;
+					
+					.opacity(80);
+					background-color: @tooltipBackground;
+					.border-radius(@baseBorderRadius);
+					content:attr(title); 
+				}
+				&:after {
+					content:"";
+					display:block; /* reduce the damage in FF3.0 */
+					position:absolute;
+					top:-3px;
+					left:0;
+					width:0;
+					border-width:5px 5px 0;
+					border-style:solid;
+					border-color:@tooltipBackground transparent;
+					background-color:transparent;
+					.opacity(80);
+				}
+			}
+		}
+	}
 }
