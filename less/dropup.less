@@ -10,9 +10,8 @@
 		position: fixed;
 		//top: -1 * ( @dropupHeight + @dropupMargin + @dropupBorder + @dropupPadding * 2 + 5);
 		bottom: @navbarHeight + 3;
-		height:400px;
+		height:@dropupHeight;
 		width: ( 4 * @gridColumnWidth) + (5 * @gridGutterWidth );
-		padding:@dropupPadding;
 		border:@dropupBorder solid @dropdownBorder;
 		margin:@dropupMargin 0;
 		background-color:@dropupBackgroundColor;
@@ -22,6 +21,38 @@
 		}
 		&.right {
 			right:2px;
+		}
+		> .dropup-divided {
+			height:100%;
+			width:100%;
+			position:relative;
+			> .dropup-80prct {
+				overflow-y:auto;
+				height: 0.75 * @dropupHeight;
+				display:block;
+				padding:@dropupPadding;
+			}
+			> .dropup-bottom {
+				width:100%;
+				position:absolute;
+				bottom:0;
+				left:0;
+				margin:0;
+				height:0.15 * @dropupHeight;
+				border-top:@dropupBorder solid @dropdownBorder;
+				line-height:16px;
+				padding:0;
+				background-color:@SearchBarFilterBackgroundColor;
+				.padding-5 {
+					padding:@dropupPadding;
+					input {
+						margin:0;
+					}
+					h5 {
+						margin:0 5px 2px 0;
+					}
+				}
+			}
 		}
 	}
 	&.open:before {
