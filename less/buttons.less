@@ -17,26 +17,53 @@
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
-  .buttonBackground(@btnBackground, @btnBackgroundHighlight, @grayDark, 0 1px 1px rgba(255,255,255,.75));
-  border: 1px solid @btnBorder;
+  background-color:transparent;
+ // .buttonBackground(@btnBackground, @btnBackgroundHighlight, @grayDark, 0 1px 1px rgba(255,255,255,.75));
+  border: 2px solid @black;
   *border: 0; // Remove the border to prevent IE7's black border on input:focus
-  border-bottom-color: darken(@btnBorder, 10%);
-  .border-radius(@baseBorderRadius);
+  //border-bottom-color: darken(@btnBorder, 10%);
+  //.border-radius(@baseBorderRadius);
   .ie7-restore-left-whitespace(); // Give IE7 some love
-  .box-shadow(~"inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)");
+  //.box-shadow(~"inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)");
 
+  //Added
+	font-variant:small-caps;
+  position:relative;
+  letter-spacing: 1px;
+  font-weight:bolder;
+  
+ &:after {
+	content: "";
+    position: absolute;
+    transition: all 0.3s ease 0s;
+    z-index: -1;
+	-moz-box-sizing: border-box;
+	height: 0;
+	left: 0;
+	top: 0;
+	width: 100%;    
+}
+  
   // Hover/focus state
   &:hover,
-  &:focus {
-    color: @grayDark;
-    text-decoration: none;
-    background-position: 0 -15px;
+  &:focus {   
+	color: @white;
+	text-decoration: none;
+	background-position: 0 -15px;
 
-    // transition is only when going to hover/focus, otherwise the background
-    // behind the gradient (there for IE<=9 fallback) gets mismatched
-    .transition(background-position .1s linear);
+	// transition is only when going to hover/focus, otherwise the background
+	// behind the gradient (there for IE<=9 fallback) gets mismatched
+	.transition(all 0.3s ease 0s);
+	
+	&:after {
+		height: 100%;
+		background-color:@black;
+	}
+	&.btn-link:after {
+		height:0;
+	}
   }
-
+  
   // Focus state for keyboard and accessibility
   &:focus {
     .tab-focus();
@@ -143,27 +170,81 @@ input[type="button"] {
 // Set the backgrounds
 // -------------------------
 .btn-primary {
-  .buttonBackground(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight);
+  //.buttonBackground(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight);
+  color:black;
+  border-color:@btnPrimaryBackgroundHighlight;
+  &:hover {
+	color:@white;
+	 background-color:@btnPrimaryBackgroundHighlight;
+	&:after {
+		background-color:@btnPrimaryBackgroundHighlight;
+	  }
+	}
 }
 // Warning appears are orange
 .btn-warning {
-  .buttonBackground(@btnWarningBackground, @btnWarningBackgroundHighlight);
+  //.buttonBackground(@btnWarningBackground, @btnWarningBackgroundHighlight);
+  color:black;
+  border-color:@btnWarningBackgroundHighlight;
+		background-color:@btnWarningBackgroundHighlight;
+  &:hover {
+	color:@white;
+	&:after {
+		background-color:@btnWarningBackgroundHighlight;
+	  }
+	}
 }
 // Danger and error appear as red
 .btn-danger {
-  .buttonBackground(@btnDangerBackground, @btnDangerBackgroundHighlight);
+ // .buttonBackground(@btnDangerBackground, @btnDangerBackgroundHighlight);
+  color:black;
+  border-color:@btnDangerBackgroundHighlight;
+		background-color:@btnDangerBackgroundHighlight;
+  &:hover {
+	color:@white;
+	&:after {
+		background-color:@btnDangerBackgroundHighlight;
+	  }
+	}
 }
 // Success appears as green
 .btn-success {
-  .buttonBackground(@btnSuccessBackground, @btnSuccessBackgroundHighlight);
+  //.buttonBackground(@btnSuccessBackground, @btnSuccessBackgroundHighlight);
+  color:black;
+  border-color:@btnSuccessBackgroundHighlight;
+		background-color:@btnSuccessBackgroundHighlight;
+  &:hover {
+	color:@white;
+	&:after {
+		background-color:@btnSuccessBackgroundHighlight;
+	  }
+	}
 }
 // Info appears as a neutral blue
 .btn-info {
-  .buttonBackground(@btnInfoBackground, @btnInfoBackgroundHighlight);
+  //.buttonBackground(@btnInfoBackground, @btnInfoBackgroundHighlight);
+  color:black;
+  border-color:@btnInfoBackgroundHighlight;
+		background-color:@btnInfoBackgroundHighlight;
+  &:hover {
+	color:@white;
+	&:after {
+		background-color:@btnInfoBackgroundHighlight;
+	  }
+	}
 }
 // Inverse appears as dark gray
 .btn-inverse {
-  .buttonBackground(@btnInverseBackground, @btnInverseBackgroundHighlight);
+ // .buttonBackground(@btnInverseBackground, @btnInverseBackgroundHighlight);
+  color:@black;
+  border-color:@btnInverseBackgroundHighlight;
+		background-color:@btnInverseBackgroundHighlight;
+  &:hover {
+	color:@white;
+	&:after {
+		background-color:@btnInverseBackgroundHighlight;
+	  }
+	}
 }
 
 
