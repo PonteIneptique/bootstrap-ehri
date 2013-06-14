@@ -21,8 +21,6 @@
  // .buttonBackground(@btnBackground, @btnBackgroundHighlight, @grayDark, 0 1px 1px rgba(255,255,255,.75));
   border: 2px solid @black;
   *border: 0; // Remove the border to prevent IE7's black border on input:focus
-  border-top-color: lighten(@black, 20%);
-  border-left-color: lighten(@black, 20%);
   .border-radius(2px 2px 2px 2px );
   .ie7-restore-left-whitespace(); // Give IE7 some love
   //.box-shadow(~"inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)");
@@ -174,8 +172,6 @@ input[type="button"] {
   //.buttonBackground(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight);
   color:black;
   border-color:@btnPrimaryBackgroundHighlight;
-  border-top-color: lighten(@btnPrimaryBackgroundHighlight, 20%);
-  border-left-color: lighten(@btnPrimaryBackgroundHighlight, 20%);
   &:hover {
 	color:@white;
 	 background-color:@btnPrimaryBackgroundHighlight;
@@ -189,8 +185,6 @@ input[type="button"] {
   //.buttonBackground(@btnWarningBackground, @btnWarningBackgroundHighlight);
   color:black;
   border-color:@btnWarningBackgroundHighlight;
-  border-top-color: lighten(@btnWarningBackgroundHighlight, 20%);
-  border-left-color: lighten(@btnWarningBackgroundHighlight, 20%);
   &:hover {
 		background-color:@btnWarningBackgroundHighlight;
 	color:@white;
@@ -204,8 +198,6 @@ input[type="button"] {
  // .buttonBackground(@btnDangerBackground, @btnDangerBackgroundHighlight);
   color:black;
   border-color:@btnDangerBackgroundHighlight;
-  border-top-color: lighten(@btnDangerBackgroundHighlight, 20%);
-  border-left-color: lighten(@btnDangerBackgroundHighlight, 20%);
   &:hover {
 		background-color:@btnDangerBackgroundHighlight;
 	color:@white;
@@ -219,8 +211,6 @@ input[type="button"] {
   //.buttonBackground(@btnSuccessBackground, @btnSuccessBackgroundHighlight);
   color:black;
   border-color:@btnSuccessBackgroundHighlight;
-  border-top-color: lighten(@btnSuccessBackgroundHighlight, 20%);
-  border-left-color: lighten(@btnSuccessBackgroundHighlight, 20%);
   &:hover {
 		background-color:@btnSuccessBackgroundHighlight;
 	color:@white;
@@ -234,8 +224,6 @@ input[type="button"] {
   //.buttonBackground(@btnInfoBackground, @btnInfoBackgroundHighlight);
   color:black;
   border-color:@btnInfoBackgroundHighlight;
-  border-top-color: lighten(@btnInfoBackgroundHighlight, 20%);
-  border-left-color: lighten(@btnInfoBackgroundHighlight, 20%);
   &:hover {
 		background-color:@btnInfoBackgroundHighlight;
 	color:@white;
@@ -249,8 +237,6 @@ input[type="button"] {
  // .buttonBackground(@btnInverseBackground, @btnInverseBackgroundHighlight);
   color:@black;
   border-color:@btnInverseBackgroundHighlight;
-  border-top-color: lighten(@btnInverseBackgroundHighlight, 20%);
-  border-left-color: lighten(@btnInverseBackgroundHighlight, 20%);
   &:hover {
 	color:@white;
 		background-color:@btnInverseBackgroundHighlight;
