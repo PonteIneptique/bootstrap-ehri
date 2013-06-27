@@ -31,58 +31,67 @@
 			height:100%;
 			width:100%;
 			position:relative;
-			> .dropup-80prct {
-				overflow-y:auto;
-				height: 0.85 * @dropupHeight;
-				display:block;
-				.box-sizing("border");
-			}
-			> .dropup-bottom {
-				width:100%;
-				position:absolute;
-				bottom:0;
-				left:0;
-				margin:0;
-				height:0.15 * @dropupHeight;
-				border-top:@dropupBorder solid @dropdownBorder;
-				line-height:16px;
-				padding:0;
-				background-color:@SearchBarFilterBackgroundColor;
-				.padding-5 {
-					padding:@dropupPadding;
-					input {
-						margin:0;
-						border: 0 none;
-						font-weight: bolder;
-						box-shadow:0;
-						.border-radius(0);
-						height:30px;
-						padding-left:10px;
-						line-height:30px;
-						&[type="text"] {
-							background-color: rgba(0, 0, 0, 0.15);
-						}
-					}
-					button.btn-success {
-						.box-sizing(content-box);
-						margin-left:10px!important;
-						margin-top:0px;
-						height:28px!important;
-						line-height:28px;
-						&:hover:after {
-							font-family: "FontAwesome";
-							content:"";
-							z-index:auto;
-							line-height:100%;
-							font-size:18px;
-							line-height:28px;
-						}
-						
-					}
-					h5 {
-						margin:0 5px 2px 0;
-					}
+		}
+		.overflow-y {
+			overflow-y:auto;
+			max-height:440px;
+		}
+		.dropup-search {
+			width:100%;
+			margin:0;
+			height:30px;
+			//border-top:@dropupBorder solid @dropdownBorder;
+			line-height:30px;
+			padding:0;
+			background-color:#305f30;
+			.padding-5 {
+				padding:@dropupPadding;
+				h5 {
+					margin:0 5px 2px 0;
 				}
+			}
+			
+			input {
+				border: 0 none;
+				font-weight: bolder;
+				box-shadow:0;
+				.border-radius(0);
+				height:30px;
+				line-height:30px;
+				width:( 4 * @gridColumnWidth) + (5 * @gridGutterWidth ) - 30px;
+				&[type="text"] {
+					//background-color: rgba(0, 0, 0, 0.15);
+					background-color:transparent;
+					color:white;
+				}
+				padding:0;
+				margin:0;
+			}
+			input:focus , input:hover {
+					.box-shadow(0);				
+			}
+			button.btn-success {
+				display:block;
+				float:right;
+				.box-sizing(content-box);
+				height:30px!important;
+				width:30px;
+				line-height:30px;
+				border:0;
+				padding:0;
+				margin:0;
+				background-color:#51A351;
+				color:white;
+				.border-radius(0);
+				&:hover:after {
+					font-family: "FontAwesome";
+					content:"";
+					z-index:auto;
+					line-height:100%;
+					font-size:18px;
+					line-height:30px;
+				}
+				
 			}
 		}
 	}
