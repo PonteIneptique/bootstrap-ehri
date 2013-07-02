@@ -54,11 +54,11 @@
 			input {
 				border: 0 none;
 				font-weight: bolder;
-				box-shadow:0;
+				.box-shadow(none);
 				.border-radius(0);
 				height:30px;
 				line-height:30px;
-				width:( 4 * @gridColumnWidth) + (5 * @gridGutterWidth ) - 30px;
+				width:( 4 * @gridColumnWidth) + (5 * @gridGutterWidth ) - 35px;
 				&[type="text"] {
 					//background-color: rgba(0, 0, 0, 0.15);
 					background-color:transparent;
@@ -68,7 +68,7 @@
 				margin:0;
 			}
 			input:focus , input:hover {
-					.box-shadow(0);				
+					.box-shadow(none);				
 			}
 			button.btn-success {
 				display:block;
