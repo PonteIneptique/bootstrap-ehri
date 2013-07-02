@@ -204,9 +204,6 @@
   .border-radius(@baseBorderRadius);
   //.box-shadow(0 1px 4px rgba(0,0,0,.065));
 }
-form.search-bar .navbar .navbar-inner {
-	background-color:@SearchBarFilterBackgroundColor;
-}
 .navbar-fixed-bottom .navbar-inner {
   border-width: 1px 0 0;
 }
@@ -422,6 +419,7 @@ min-width:@navbarTopHeight;
 
 .search-bar {
 	.navbar-inner {
+		background-color:@SearchBarFilterBackgroundColor;
 		.box-shadow(none);
 		border:none;
 		.border-radius(0);
@@ -455,8 +453,14 @@ min-width:@navbarTopHeight;
 					color:@SearchBarToggleActiveColor;
 				}
 			}
+			
+			&:hover {
+				&:after {
+				content: "";
+				}
+			}
 		}
-		li.dropdown.open, li.dropdown.active, li.dropdown.open.active {
+		li.dropdown:hover, li.dropdown.open, li.dropdown.active, li.dropdown.open.active {
 			& > .dropdown-toggle {
 				background-color: darken(@SearchBarFilterBackgroundColor, 5%);
 				color: @SearchBarToggleActiveColor;
