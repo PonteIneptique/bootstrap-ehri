@@ -358,6 +358,7 @@ min-width:@navbarTopHeight;
 
 // Menu position and menu carets
 .navbar .nav > li > .dropdown-menu {
+/*
   &:before {
     content: '';
     display: inline-block;
@@ -378,7 +379,7 @@ min-width:@navbarTopHeight;
     position: absolute;
     top: -6px;
     left: 10px;
-  }
+  }*/
 }
 // Menu position and menu caret support for dropups via extra dropup class
 .navbar-fixed-bottom .nav > li > .dropdown-menu {
@@ -419,11 +420,70 @@ min-width:@navbarTopHeight;
   color: @navbarTopLinkColorActive;
 }
 
-.search-bar .nav li.dropdown.open > .dropdown-toggle,
-.search-bar .nav li.dropdown.active > .dropdown-toggle,
-.search-bar .nav li.dropdown.open.active > .dropdown-toggle {
-  background-color: darken(@SearchBarFilterBackgroundColor, 5%);
-  color: @navbarLinkColorActive;
+.search-bar {
+	.navbar-inner {
+		.box-shadow(none);
+		border:none;
+		.border-radius(0);
+	}
+	.nav {
+		> li > a {
+			color:@SearchBarToggleColor;
+			&:hover {
+				color:@SearchBarToggleActiveColor;
+			}
+		}
+		li.dropdown {
+			&:after {
+				position:absolute;
+				display:block;
+				top:100%;
+				margin-top:-8px;
+				width:100%;
+				text-align:center;
+				font-family: FontAwesome;
+				content: "";
+				z-index:1001;
+			}
+			&.open:after {
+				content: "";
+				color:white;
+			}
+			> .dropdown-toggle {
+				color:@SearchBarToggleColor;
+				&:hover {
+					color:@SearchBarToggleActiveColor;
+				}
+			}
+		}
+		li.dropdown.open, li.dropdown.active, li.dropdown.open.active {
+			& > .dropdown-toggle {
+				background-color: darken(@SearchBarFilterBackgroundColor, 5%);
+				color: @SearchBarToggleActiveColor;
+				padding-bottom:7px;
+			}
+			border-bottom:3px solid #CDC4D3;
+		}
+		.dropdown-menu {
+			.box-shadow(none);
+			border:none;
+			.border-radius(0);
+			margin:0;
+			margin-top:3px;
+			background-color:#9b89a8;
+			color:white;
+			min-width:100%;
+			a {
+				&:hover {
+					background-color:#725883;
+					background-image:none;
+					padding-left:17px;
+					border-left:3px solid #CDC4D3;
+				}
+				color:white;
+			}
+		}
+	}
 }
 
 .navbar .nav li.dropdown > .dropdown-toggle .caret {
