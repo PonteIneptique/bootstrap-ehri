@@ -232,7 +232,7 @@
 .navbar-fixed-top,
 .navbar-static-top {
   .navbar-inner {
-    .box-shadow(~"0 1px 10px rgba(0,0,0,.1)");
+    .box-shadow(none);
   }
 }*/
 
@@ -305,6 +305,8 @@ min-width:@navbarTopHeight;
   background-color: @navbarTopLinkBackgroundHover; // "transparent" is default to differentiate :hover/:focus from .active
   color: @navbarTopLinkColorHover;
   text-decoration: none;
+  padding-bottom:(@navbarTopHeight - (@baseLineHeight * 2)) - 3px;
+  border-bottom:3px solid @SearchBarBackgroundColor;
 }
 
 // Active nav items
@@ -323,7 +325,7 @@ min-width:@navbarTopHeight;
   color: @navbarTopLinkColorActive;
   text-decoration: none;
   background-color: @navbarTopLinkBackgroundActive;
-  .box-shadow(inset 0 3px 8px rgba(0,0,0,.125));
+//  .box-shadow(inset 0 3px 8px rgba(0,0,0,.125));
 }
 // Navbar button for toggling navbar items in responsive layouts
 // These definitions need to come after '.navbar .btn'
