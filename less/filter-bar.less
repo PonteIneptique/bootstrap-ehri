@@ -1,0 +1,99 @@
+.filterBar {
+	height:30px;
+	display:block;
+	width:100%;
+	text-align:right;
+	.filterBar-input {
+		height:30px;
+		width:0px;
+		
+		line-height:30px;
+		padding:0;
+		margin:0;
+		
+		display:inline-block;
+		vertical-align:top;
+		
+		color:white;
+		background-color:#4a2860;
+		
+		border:none;
+		
+		.transition(width 2s);
+		
+		&.open {
+			width:200px;
+			.transition(width 2s);
+		}
+	}
+	.filterBar-icon {
+		height:30px;
+		width:30px;
+		display:inline-block;
+		
+		line-height:30px;
+		text-align:center;
+		
+		color:white;
+		background-color:#36114f;
+		> a, a:hover, a:focus, a:visited, a:link {
+			color:inherit;
+			text-decoration:none;
+		}
+		&.dropdown {
+			> .dropdown-menu {
+				width:30px;
+				margin:0;
+				padding:0;
+				min-width:30px;
+				.box-shadow(none);
+				border:none;
+				
+				> li > a {
+				
+					width:30px;
+					height:30px;
+					padding:0;
+					line-height:30px;
+					text-align:center;
+					background-color:#36114f;
+					color:white;
+					display:block;
+					position:relative;
+					
+					& > .legend {
+						position:absolute;
+						display:block;
+						left:100%;
+						top:0px;
+						height:28px;
+						width:0;
+						text-overflow:hidden;
+						.transition(width 1s);
+						opacity:0;
+					}
+					
+					&:hover {
+						background-color:#4a2860;
+						background-image:none;
+						
+						& > .legend {
+							text-overflow:none;
+							visibility:visible;
+							padding:0 5px;
+							width:auto;
+							color:#36114f;
+							border:1px solid #36114f;
+							border-left:0;
+							background-color:white;
+							.transition(width 1s);
+							opacity:1;
+						}
+					}
+					
+					
+				}
+			}
+		}
+	}
+}
