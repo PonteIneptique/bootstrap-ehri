@@ -1,0 +1,20 @@
+//http://stackoverflow.com/questions/5445491/height-equal-to-dynamic-width-css-fluid-layout
+
+//Hacks for square responsive design
+.square-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+	
+	> .square-hack {
+		margin-top: 100%;
+	}
+	
+	> .square-content {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+}
