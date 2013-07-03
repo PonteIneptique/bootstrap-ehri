@@ -63,14 +63,11 @@
 					
 					& > .legend {
 						position:absolute;
-						display:block;
 						left:100%;
 						top:0px;
 						height:28px;
-						width:0;
-						text-overflow:hidden;
-						.transition(width 1s);
-						opacity:0;
+						width:0px;
+						display:none;
 					}
 					
 					&:hover {
@@ -78,20 +75,22 @@
 						background-image:none;
 						
 						& > .legend {
-							text-overflow:none;
-							visibility:visible;
+							display:block;
+							min-width:100px;
 							padding:0 5px;
-							width:auto;
 							color:#36114f;
 							border:1px solid #36114f;
 							border-left:0;
 							background-color:white;
-							.transition(width 1s);
-							opacity:1;
 						}
 					}
 					
 					
+				}
+			}
+			&:hover {
+				.dropdown-menu {
+					display:block;
 				}
 			}
 		}
