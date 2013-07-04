@@ -5,6 +5,7 @@
 	width:100%;
 	text-align:right;
 	.filterBar-input {
+		.placeholder(#ffffff);
 		.border-radius(0);
 		height:30px;
 		width:0px;
@@ -24,8 +25,30 @@
 		.transition(width 2s);
 		
 		&.open {
-			min-width:200px;
+			width:180px;
 			.transition(width 2s);
+		}
+	}
+	.filterBar-page {
+		.placeholder(#ffffff);
+		height:30px;
+		width:30px;
+		display:inline-block;
+		
+		line-height:30px;
+		text-align:center;
+		padding:0;
+		border:none;
+		.border-radius(0);
+		margin:0;
+		color:white;
+		background-color:#36114f;
+		.box-shadow(none);
+		vertical-align:top;
+		opacity:0.9;
+		
+		&:focus {
+			.box-shadow(none);
 		}
 	}
 	.filterBar-icon {
@@ -49,21 +72,9 @@
 		&.desactivated {
 			opacity:0.9;
 		}
-		// &.desactivated:before {
-			// position: absolute;
-			// top:0;
-			// color: white;
-			// content: "";
-			// display: block;
-			// font-family: FontAwesome;
-			// font-size: 10px;
-			// height: 30px;
-			// left: 0;
-			// line-height: 50px;
-			// text-align: center;
-			// vertical-align: bottom;
-			// width: 30px;
-		// }
+		&.filterBar-icon-empty {
+			background-color:white;
+		}
 		> a, a:hover, a:focus, a:visited, a:link {
 			color:inherit;
 			text-decoration:none;
@@ -119,6 +130,24 @@
 			&:hover {
 				.dropdown-menu {
 					display:block;
+				}
+			}
+		}
+	}
+	.filterBar-icon , .filterBar-page {
+		&.tooltiped {
+			position:relative;
+			&:hover {
+				&:before{
+					position:absolute;
+					top:-31px;
+					left:0;
+					.transition(all 1s ease 1s);
+					height:30px;
+					border:1px solid #36114f;
+								color:#36114f;
+					background-color:rgba(255,255,255,0.9);
+					content:attr(data-tooltiped);
 				}
 			}
 		}

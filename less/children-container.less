@@ -6,7 +6,6 @@
 	}
 }
 .children-container {
-	white-space:nowrap;
 	> .children-list {
 		&.closed {
 			display:none;
@@ -15,11 +14,23 @@
 		padding:3px 3px 3px 0;
 		border:1px solid #36114f;
 		.border-radius(3px);
+		.border-top-radius(0);
 		.transition(all 1s);
 		min-height:30px;
+		margin-top:-1px;
 		
+		> .children-item-head {
+			list-style-type:none;
+			padding-left:5px;
+			display:block;
+			
+			height:30px;
+			line-height:30px;
+			
+			font-weight:bold;
+			text-align:center;
+		}
 		> .children-item {
-			margin-top:-1px;
 			padding-left:5px;
 			list-style-type:none;
 			display:block;
@@ -32,6 +43,13 @@
 				border-left:3px solid #36114f;
 				background-color:#d6cfdb;
 			}
+			
+		}
+		> .children-quickview {
+			display: block;
+			list-style-type: none;
+			padding-left: 5px;
+			padding-right:5px;
 			
 		}
 		
