@@ -1,0 +1,72 @@
+.search-bar {
+	.navbar-inner {
+		background-color:@SearchBarFilterBackgroundColor;
+		.box-shadow(none);
+		border:none;
+		.border-radius(0);
+	}
+	.nav {
+		> li > a {
+			color:@SearchBarToggleColor;
+			&:hover {
+				color:@SearchBarToggleActiveColor;
+			}
+		}
+		li.dropdown {
+			&:after {
+				position:absolute;
+				display:block;
+				top:100%;
+				margin-top:-8px;
+				width:100%;
+				text-align:center;
+				font-family: FontAwesome;
+				content: "";
+				z-index:1001;
+			}
+			&.open:after {
+				content: "";
+				color:black;
+			}
+			> .dropdown-toggle {
+				color:@SearchBarToggleColor;
+				&:hover {
+					color:@SearchBarToggleActiveColor;
+				}
+			}
+			
+			&:hover {
+				&:after {
+				content: "";
+				}
+			}
+		}
+		li.dropdown:hover, li.dropdown.open, li.dropdown.active, li.dropdown.open.active {
+			& > .dropdown-toggle {
+				background-color: darken(@SearchBarFilterBackgroundColor, 5%);
+				color: @SearchBarToggleActiveColor;
+				padding-bottom:7px;
+			}
+			border-bottom:3px solid #CDC4D3;
+		}
+		.dropdown-menu {
+			.box-shadow(none);
+			border:none;
+			.border-radius(0);
+			margin:0;
+			margin-top:3px;
+			background-color:#9b89a8;
+			color:white;
+			min-width:100%;
+			a {
+				&:hover {
+					background-color:#725883;
+					background-image:none;
+					padding-left:17px;
+					border-left:3px solid #CDC4D3;
+				}
+				color:white;
+			}
+		}
+	}
+}
