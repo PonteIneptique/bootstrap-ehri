@@ -3,44 +3,60 @@
 		height:30px;
 		line-height:30px;
 		display:block;
-		padding-left:10px;
-		padding-right:10px;
 		& > div {
 			display:inline-block;
 		}
 		& > .basket-item-title { 
 			display:inline-block; 
-			width:85%; 
 			.text-overflow(); 
+			text-align:left;
+			padding-left:10px;
+			
+		}
+		
+		> .logo {
+			display:none;
+			display:inline-block;
+			width:auto;
+			float:right;
+			height:30px;
+			line-height:30px;
+			opacity:0.2;
+			text-align:center;
 		}
 		
 		&:hover, &.current  {
-			border-left:5px solid #294f10;
-			padding-left:5px;
+			border-left:5px solid #c0392b;
 			color:#3c3c3c;
 			background-color:#eae7ed;
+			height:30px;
+			text-overflow:hidden;
 			
-			& > .icon-pack  {
-				display:block;
+			> .logo {
+				display:none;
+			}
+			
+			> .basket-item-title {
+				padding-left:5px;
+			}
+			> .basket-action  {
+				display:inline-block;
+				width:auto;
 				float:right;
-				width:10%;
-				min-width:15px;
-				text-align:right;
 			}
 			
 		}
-		& > .icon-pack  {
+		& > .basket-action {
 			height:30px;
 			line-height:30px;
 			display:none;
-			margin-right:2px;
 		}
 		a {
 			color:#3c3c3c;
 			font-weight:bold;
 		}
 	}
-	& > .basket-header {
+	> .basket-header {
 		background-color: #EAE7ED;
 		border-bottom: 1px solid #9C8DAA;
 		display: block;

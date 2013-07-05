@@ -12,12 +12,13 @@
 		bottom: @navbarHeight + 3;
 		height:@dropupHeight;
 		width: ( 4 * @gridColumnWidth) + (5 * @gridGutterWidth );
-		border:@dropupBorder solid @dropdownBorder;
+		border:@dropupBorder solid #c0392b;
 		margin:@dropupMargin 0;
 		background-color:@dropupBackgroundColor;
-		.border-radius(6px);
-		.box-shadow(#888 0px -1px 10px 0px);
+		//.border-radius(6px);
+		//.box-shadow(#888 0px -1px 10px 0px);
 		.transition(1s height);
+		
 		&.left {
 			left:2px;
 		}
@@ -94,29 +95,20 @@
 				
 			}
 		}
+		.dropup-header {
+			background-color:#c0392b;
+			height:30px;
+			text-indent:0;
+			
+		}
 	}
-	&.open:before {
-		content:"";
-		display:block; /* reduce the damage in FF3.0 */
-		position:absolute;
-		top:-5px;
-		left:5px;
-		width:0;
-		border-width:5px 7px 0;
-		border-style:solid;
-		border-color:@dropdownBorder transparent;
-		background-color:transparent;
-	}
-	&.open:after {
-		content:"";
-		display:block; /* reduce the damage in FF3.0 */
-		position:absolute;
-		top:-5px;
-		left:6px;
-		width:0;
-		border-width:4px 6px 0;
-		border-style:solid;
-		border-color:@dropupBackgroundColor transparent;
-		background-color:transparent;
+	.filterBar-icon {
+		background-color:#c0392b;
+		color:white;
+		&:hover {
+			text-decoration:none;
+			background-color:#e74c3c;
+			color:white;
+		}
 	}
 }
